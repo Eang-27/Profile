@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .hover-scale {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #60A5FA, #34D399);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-100 font-sans">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full glass z-20">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold gradient-text">Chhneg Eang</h1>
+            <ul class="flex space-x-8 text-lg">
+                <li><a href="#home" class="hover:text-blue-400">Home</a></li>
+                <li><a href="#about" class="hover:text-blue-400">About</a></li>
+                <li><a href="#education" class="hover:text-blue-400">Education</a></li>
+                <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-800 via-blue-900 to-teal-600">
+        <div class="container mx-auto px-6 text-center">
+            <h2 id="text" class="text-6xl font-extrabold mb-6 gradient-text drop-shadow-lg"></h2>
+            <p class="text-2xl mb-8 text-gray-200 font-semibold">Crafting innovative solutions with passion and creativity</p>
+            <a href="#about" class="inline-block bg-blue-600 text-white px-10 py-4 rounded-full font-semibold hover:bg-blue-500 transition hover-scale">Explore My Journey</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-bold text-center mb-12 gradient-text animate-fade-in">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center max-w-5xl mx-auto glass p-10 rounded-2xl shadow-2xl animate-fade-in">
+                <img src="about.JPG" class="w-48 h-48 rounded-full object-cover mb-6 md:mb-0 md:mr-8 border-4 border-blue-400 hover-scale" alt="Profile" />
+                <div>
+                    <p class="text-lg mb-4 text-gray-200 leading-relaxed">
+                        Hi, I'm <span class="font-semibold text-blue-300">Chheng Eang</span>, a 17-year-old student from Cambodia. I’m passionate about <strong>science, technology, coding, design</strong>, and <strong>business innovation</strong>. I enjoy exploring new ideas, especially in <strong>aviation</strong> and <strong>programming</strong>.
+                    </p>
+                    <p class="text-lg text-gray-200 leading-relaxed">
+                        My mission is to build meaningful solutions and inspire others through creativity and determination. I believe in hard work, continuous learning, and making dreams come true.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-24 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-bold text-center mb-12 gradient-text animate-fade-in">Education</h2>
+            <div class="max-w-4xl mx-auto glass p-10 rounded-2xl shadow-2xl animate-fade-in">
+                <h3 class="text-2xl font-semibold text-blue-400 mb-2">Elementary School: Passed</h3>
+                <h3 class="text-2xl font-semibold text-blue-400 mb-2">Secondary School: Passed</h3>
+                <h3 class="text-2xl font-semibold text-blue-400 mb-2">High School: In Progress</h3>
+                <h3 class="text-2xl font-semibold text-blue-400 mb-2">Position: Student</h3>
+
+                <p class="text-gray-200 mt-4"><strong>Relevant Coursework:</strong> STEM, HTML, CSS, JavaScript, Python, C, C++, LeetCode, Edx, Udemy, Coursera, Duolingo</p>
+                <p class="text-gray-200"><strong>Knowledge:</strong> Programming, Math, Science</p>
+                <p class="text-gray-200"><strong>Languages:</strong> Khmer, English</p>
+                <p class="text-gray-200"><strong>Soft Skills:</strong> Communication, Teamwork, Problem-solving, Emotional Intelligence, friendly</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-gradient-to-br from-gray-900 via-blue-950 to-teal-700">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-bold text-center mb-12 gradient-text animate-fade-in">Let's Connect</h2>
+            <div class="max-w-4xl mx-auto glass p-10 rounded-2xl shadow-2xl animate-fade-in">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex items-center space-x-4 hover-scale">
+                        <i class="fas fa-envelope text-2xl text-blue-400"></i>
+                        <p class="text-gray-200">eanggoodboy12345@gmail.com</p>
+                    </div>
+                    <div class="flex items-center space-x-4 hover-scale">
+                        <i class="fas fa-phone text-2xl text-blue-400"></i>
+                        <p class="text-gray-200">(+855) 978562885</p>
+                    </div>
+                    <div class="flex items-center space-x-4 hover-scale">
+                        <i class="fab fa-telegram text-2xl text-blue-400"></i>
+                        <a href="#" class="text-gray-200 hover:text-blue-400">Telegram: (+855) 978562885</a>
+                    </div>
+                    <div class="flex items-center space-x-4 hover-scale">
+                        <i class="fab fa-facebook text-2xl text-blue-400"></i>
+                        <a href="#" class="text-gray-200 hover:text-blue-400">Facebook: Chheng Eang</a>
+                    </div>
+                    <div class="flex items-center space-x-4 hover-scale">
+                        <i class="fab fa-linkedin text-2xl text-blue-400"></i>
+                        <a href="#" class="text-gray-200 hover:text-blue-400">LinkedIn</a>
+                    </div>
+                </div>
+                <div class="mt-8 text-center">
+                    <button onclick="alert('Message sent!')" class="bg-blue-600 text-white px-10 py-4 rounded-full font-semibold hover:bg-blue-500 hover-scale">Send a Message</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-200 text-center py-8">
+        <p>© 2025 Chheng Eang. All rights reserved.</p>
+    </footer>
+
+    <!-- Typing Effect + Scroll Animation -->
+    <script>
+    const message = "HEllO, WELCOME TO MY PROFILE.";
+    const textElement = document.getElementById("text");
+    let index = 0;
+
+    function typeLetter() {
+        if (index < message.length) {
+            textElement.textContent += message.charAt(index);
+            index++;
+            setTimeout(typeLetter, 150);
+        } else {
+            setTimeout(() => {
+                textElement.textContent = "";
+                index = 0;
+                typeLetter();
+            }, 2000); // ចាំ 2 វិនាទីមុន looping
+        }
+    }
+
+    typeLetter();
+
+    // Scroll fade-in animation (Only once, not duplicated)
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-fade-in');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.animate-fade-in').forEach(el => {
+        observer.observe(el);
+    });
+
+
+    </script>
+</body>
+
+</html>
+
+<script>
+ 
