@@ -154,7 +154,7 @@
 
     <!-- Typing Effect + Scroll Animation -->
     <script>
-    const message = "HEllO, WELCOME TO MY PROFILE.";
+    const message = "HELLO, WELCOME TO MY PROFILE.";
     const textElement = document.getElementById("text");
     let index = 0;
 
@@ -168,13 +168,13 @@
                 textElement.textContent = "";
                 index = 0;
                 typeLetter();
-            }, 2000); // ចាំ 2 វិនាទីមុន looping
+            }, 2000);
         }
     }
 
     typeLetter();
 
-    // Scroll fade-in animation (Only once, not duplicated)
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
