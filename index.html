@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My profile</title>
+    <title>Your Name - Modern Developer Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -157,42 +157,124 @@
             box-shadow: 0 20px 40px rgba(255, 107, 107, 0.4);
         }
 
-        /* 3D Cube Animation */
+        /* Sleek 3D Animations */
         .cube-container {
             position: absolute;
             top: 50%;
-            right: 10%;
+            right: 5%;
             transform: translateY(-50%);
-            perspective: 1000px;
+            perspective: 1200px;
+            z-index: 1;
         }
 
-        .cube {
-            width: 200px;
-            height: 200px;
+        .modern-scene {
             position: relative;
+            width: 250px;
+            height: 250px;
             transform-style: preserve-3d;
-            animation: rotateCube 10s infinite linear;
+        }
+
+        /* Modern Floating Cube */
+        .modern-cube {
+            width: 120px;
+            height: 120px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transform-style: preserve-3d;
+            animation: gentleFloat 6s ease-in-out infinite;
         }
 
         .cube-face {
             position: absolute;
-            width: 200px;
-            height: 200px;
-            border: 2px solid rgba(78, 205, 196, 0.3);
-            background: rgba(78, 205, 196, 0.1);
-            backdrop-filter: blur(10px);
+            width: 120px;
+            height: 120px;
+            border: 1px solid rgba(78, 205, 196, 0.4);
+            background: linear-gradient(135deg, 
+                rgba(78, 205, 196, 0.05) 0%, 
+                rgba(69, 183, 209, 0.05) 100%);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 8px 32px rgba(78, 205, 196, 0.1);
         }
 
-        .cube-face.front { transform: rotateY(0deg) translateZ(100px); }
-        .cube-face.back { transform: rotateY(180deg) translateZ(100px); }
-        .cube-face.right { transform: rotateY(90deg) translateZ(100px); }
-        .cube-face.left { transform: rotateY(-90deg) translateZ(100px); }
-        .cube-face.top { transform: rotateX(90deg) translateZ(100px); }
-        .cube-face.bottom { transform: rotateX(-90deg) translateZ(100px); }
+        .cube-face.front { transform: rotateY(0deg) translateZ(60px); }
+        .cube-face.back { transform: rotateY(180deg) translateZ(60px); }
+        .cube-face.right { transform: rotateY(90deg) translateZ(60px); }
+        .cube-face.left { transform: rotateY(-90deg) translateZ(60px); }
+        .cube-face.top { transform: rotateX(90deg) translateZ(60px); }
+        .cube-face.bottom { transform: rotateX(-90deg) translateZ(60px); }
 
-        @keyframes rotateCube {
-            0% { transform: rotateX(0deg) rotateY(0deg); }
-            100% { transform: rotateX(360deg) rotateY(360deg); }
+        /* Subtle Orbiting Ring */
+        .orbit-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 180px;
+            height: 180px;
+            border: 1px solid rgba(255, 107, 107, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) rotateX(70deg);
+            animation: slowRotate 12s linear infinite;
+        }
+
+        .orbit-ring::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: 50%;
+            width: 6px;
+            height: 6px;
+            background: radial-gradient(circle, #ff6b6b, transparent);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 8px rgba(255, 107, 107, 0.6);
+        }
+
+        /* Minimal Geometric Accents */
+        .accent-dot {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(78, 205, 196, 0.6);
+            border-radius: 50%;
+            animation: subtlePulse 3s ease-in-out infinite;
+        }
+
+        .accent-line {
+            position: absolute;
+            height: 1px;
+            width: 40px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(69, 183, 209, 0.4), 
+                transparent);
+            animation: subtleGlow 4s ease-in-out infinite;
+        }
+
+        /* Animations */
+        @keyframes gentleFloat {
+            0%, 100% { 
+                transform: translate(-50%, -50%) rotateY(0deg) rotateX(10deg);
+            }
+            50% { 
+                transform: translate(-50%, -50%) rotateY(180deg) rotateX(-10deg);
+            }
+        }
+
+        @keyframes slowRotate {
+            0% { transform: translate(-50%, -50%) rotateX(70deg) rotateZ(0deg); }
+            100% { transform: translate(-50%, -50%) rotateX(70deg) rotateZ(360deg); }
+        }
+
+        @keyframes subtlePulse {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.2); }
+        }
+
+        @keyframes subtleGlow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
         }
 
         /* Sections */
@@ -598,7 +680,13 @@
             }
             
             .cube-container {
-                display: none;
+                right: 2%;
+                transform: translateY(-50%) scale(0.7);
+            }
+            
+            .modern-scene {
+                width: 180px;
+                height: 180px;
             }
             
             .nav-links {
@@ -607,6 +695,34 @@
             
             .section {
                 padding: 3rem 1rem;
+            }
+
+            .social-links {
+                gap: 1rem;
+            }
+
+            .social-link {
+                width: 50px;
+                height: 50px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                text-align: center;
+            }
+
+            .education-timeline::before {
+                left: 20px;
+            }
+
+            .timeline-dot {
+                left: 11px !important;
+                right: auto !important;
+            }
+
+            .timeline-content {
+                margin-left: 50px;
             }
         }
 
@@ -635,7 +751,7 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">Chheng Eang</div>
+            <div class="logo">Portfolio</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -649,20 +765,32 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1 id="text"></h1>
-            <p class="subtitle">Exploring my journey.</p>
+            <h1>Your Name Here</h1>
+            <p class="subtitle">High School Student & Aspiring Programmer</p>
             <a href="#contact" class="cta-button">Get In Touch</a>
         </div>
         
-        <!-- 3D Cube -->
+        <!-- Modern 3D Scene -->
         <div class="cube-container">
-            <div class="cube">
-                <div class="cube-face front"></div>
-                <div class="cube-face back"></div>
-                <div class="cube-face right"></div>
-                <div class="cube-face left"></div>
-                <div class="cube-face top"></div>
-                <div class="cube-face bottom"></div>
+            <div class="modern-scene">
+                <!-- Clean Floating Cube -->
+                <div class="modern-cube">
+                    <div class="cube-face front"></div>
+                    <div class="cube-face back"></div>
+                    <div class="cube-face right"></div>
+                    <div class="cube-face left"></div>
+                    <div class="cube-face top"></div>
+                    <div class="cube-face bottom"></div>
+                </div>
+                
+                <!-- Subtle Orbiting Ring -->
+                <div class="orbit-ring"></div>
+                
+                <!-- Minimal Accents -->
+                <div class="accent-dot" style="top: 15%; left: 20%;"></div>
+                <div class="accent-dot" style="bottom: 20%; right: 25%; animation-delay: 1s;"></div>
+                <div class="accent-line" style="top: 25%; right: 10%; animation-delay: 0.5s;"></div>
+                <div class="accent-line" style="bottom: 30%; left: 15%; animation-delay: 2s;"></div>
             </div>
         </div>
     </section>
@@ -673,11 +801,11 @@
         <div style="text-align: center; max-width: 900px; margin: 0 auto;">
             <!-- Profile Photo -->
             <div class="profile-photo">
-                <img src="about.JPG" alt="Profile Photo" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 4px solid #4ecdc4; box-shadow: 0 10px 30px rgba(78, 205, 196, 0.3); margin-bottom: 2rem; animation: profileFloat 3s ease-in-out infinite;">
+                <img src="https://via.placeholder.com/200x200/4ecdc4/ffffff?text=Your+Photo" alt="Profile Photo" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 4px solid #4ecdc4; box-shadow: 0 10px 30px rgba(78, 205, 196, 0.3); margin-bottom: 2rem; animation: profileFloat 3s ease-in-out infinite;">
             </div>
             
             <div style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 3rem;">
-                <p>I'm a passionate student currently pursuing my high school education with a strong focus on STEM subjects. I love exploring the world of programming ,technology and Investment, I like learning new skills by reading book and research. My favorite is aviatio, programming and Investment. I lives in a small farmily but have a big dream.</p>
+                <p>I'm a passionate student currently pursuing my high school education with a strong focus on STEM subjects. I love exploring the world of programming and technology, constantly learning new skills through various platforms and hands-on projects.</p>
             </div>
 
             <!-- Education Section -->
@@ -709,7 +837,7 @@
                 
                 <div class="current-info">
                     <p><strong>Current Position:</strong> Student</p>
-                    <p><strong>Relevant Coursework:</strong> STEM, HTML, CSS, JavaScript, Python, C, C++, Computer Science</p>
+                    <p><strong>Relevant Coursework:</strong> STEM, HTML, CSS, JavaScript, Python, C, C++</p>
                     <p><strong>Learning Platforms:</strong> LeetCode, EdX, Udemy, Coursera, Duolingo</p>
                 </div>
             </div>
@@ -722,33 +850,33 @@
         <div class="skills-grid">
             <div class="skill-card">
                 <div class="skill-icon">💻</div>
-                <h3>Computer Skill</h3>
-                <p>Coding, AI, Excell, word, power piont, design</p>
+                <h3>Programming Languages</h3>
+                <p>HTML, CSS, JavaScript, Python, C, C++</p>
             </div>
-             <div class="skill-card">
-                <div class="skill-icon">💹</div>
-                <h3>Investment</h3>
-                <p>Forex, Crypto, stock, ETFs, trader,  Analysts Chart,</p>
+            <div class="skill-card">
+                <div class="skill-icon">🎯</div>
+                <h3>Problem Solving</h3>
+                <p>LeetCode, Algorithmic Thinking, Data Structures</p>
             </div>
             <div class="skill-card">
                 <div class="skill-icon">📚</div>
                 <h3>Knowledge Areas</h3>
-                <p>Computer skill,Programming, Mathematics, Science, Physic,</p>
+                <p>Programming, Mathematics, Science</p>
             </div>
             <div class="skill-card">
                 <div class="skill-icon">🌍</div>
                 <h3>Languages</h3>
-                <p>Khmer (Native), English</p>
+                <p>Khmer (Native), English (Fluent)</p>
             </div>
             <div class="skill-card">
                 <div class="skill-icon">🤝</div>
                 <h3>Soft Skills</h3>
-                <p>Communication, Teamwork, Problem-solving, </p>
+                <p>Communication, Teamwork, Problem-solving</p>
             </div>
             <div class="skill-card">
                 <div class="skill-icon">🧠</div>
                 <h3>Personal Traits</h3>
-                <p>Emotional Intelligence, Friendly, Curious,Honesty</p>
+                <p>Emotional Intelligence, Friendly, Curious</p>
             </div>
         </div>
     </section>
@@ -760,16 +888,23 @@
             <div class="project-card">
                 <div class="project-image"></div>
                 <div class="project-content">
-                    <h3 class="project-title">Telegram BOT: translate English to khmer</h3>
-                    <p>That telegram is used to translate English into Khmer, which helps people who are still weak in English.</p>
+                    <h3 class="project-title">E-Commerce Platform</h3>
+                    <p>A full-stack e-commerce solution built with React and Node.js, featuring real-time inventory management and secure payment processing.</p>
                 </div>
             </div>
             <div class="project-card">
                 <div class="project-image"></div>
                 <div class="project-content">
-                    <h3 class="project-title">Join Competition STEM in 2024</h3>
-                    <p>My team was working on a project about "Green Energy." We decided to build a greenhouse energy system to competitive with teams from 25 provinces across Cambodia. I have a lot of experience with STEM.
+                    <h3 class="project-title">Social Media Dashboard</h3>
+                    <p>Analytics dashboard for social media management with real-time data visualization and automated reporting features.</p>
+                </div>
             </div>
+            <div class="project-card">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3 class="project-title">AI Chat Application</h3>
+                    <p>Intelligent chat application powered by machine learning algorithms with natural language processing capabilities.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -780,22 +915,22 @@
         
         <!-- Social Media Icons -->
         <div class="social-links">
-            <a href="#" class="social-link facebook" target="_blank">
+            <a href="https://facebook.com/yourprofile" class="social-link facebook" target="_blank">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                 </svg>
             </a>
-            <a href="#" class="social-link telegram" target="_blank">
+            <a href="https://t.me/yourusername" class="social-link telegram" target="_blank">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
                 </svg>
             </a>
-            <a href="#" class="social-link twitter" target="_blank">
+            <a href="https://twitter.com/yourusername" class="social-link twitter" target="_blank">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                 </svg>
             </a>
-            <a href="#" class="social-link email" target="_blank">
+            <a href="mailto:your.email@gmail.com" class="social-link email" target="_blank">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                 </svg>
@@ -817,25 +952,6 @@
     </section>
 
     <script>
-         const message = "HELLO, WELCOME TO MY PROFILE.";
-    const textElement = document.getElementById("text");
-    let index = 0;
-
-    function typeLetter() {
-        if (index < message.length) {
-            textElement.textContent += message.charAt(index);
-            index++;
-            setTimeout(typeLetter, 150);
-        } else {
-            setTimeout(() => {
-                textElement.textContent = "";
-                index = 0;
-                typeLetter();
-            }, 2000);
-        }
-    }
-
-    typeLetter();
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -915,4 +1031,3 @@
     </script>
 </body>
 </html>
-
